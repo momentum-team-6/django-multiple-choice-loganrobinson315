@@ -1,0 +1,13 @@
+<h1>Delete</h1>
+
+<div>
+    <form action="{% url 'delete-deck' pk=deck.pk %}" method="POST">
+      {% csrf_token %}
+      <p>Are you sure you want to delete your Deck?</p>
+      <div>
+          <button type='submit'>Delete Deck</button>
+          <a href={% url 'list-deck' %}>Cancel</a>
+      </div>
+
+    </form>
+</div>

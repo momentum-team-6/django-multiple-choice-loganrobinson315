@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="/static/form.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Oswald:300,400,700'></link>
+</head>
+
+
+<h1>Add Deck</h1>
+
+<form class="form" action="{% url 'add-deck' %}" method='POST'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <button type="submit">Submit</button>
+        <a href="{% url 'list-deck' %}">Cancel</a>
+    </div>
+</form>

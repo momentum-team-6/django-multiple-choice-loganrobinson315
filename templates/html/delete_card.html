@@ -1,0 +1,13 @@
+<h1>Delete</h1>
+
+<div>
+    <form action="{% url 'delete-card' pk=card.pk %}" method="POST">
+      {% csrf_token %}
+      <p>Are you sure you want to delete your card? {{ card.title }}</p>
+      <div>
+          <button type='submit'>Delete Card</button>
+          <a href={{ topic.get_abosulte_url }}/>Cancel</a>
+      </div>
+
+    </form>
+</div>             

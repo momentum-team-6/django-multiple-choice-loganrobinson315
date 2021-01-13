@@ -1,0 +1,12 @@
+<h1>Edit Deck</h1>
+
+<div>
+    <form action="{% url 'edit-deck' pk=deck.pk %}" method='POST'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+      <button type="submit">Update Deck</button>
+      <a href="{% url 'list-deck' %}">Cancel</a>
+    </div>
+    </form> 
+</div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/home_style.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans|Oswald:300,400,700'></link>
+
+    </head>
+    
+    
+    <body class="body">
+        
+        <div class="header">
+            <div class="item">
+                <h1>Write, Remember, Repeat.</h1>
+                <a class="add" href="{% url 'add-deck' %}">Add Deck</a>
+            </div>
+        </div>
+
+        <section class="container">
+            {% for deck in decks.all %}
+            <div class="card">
+                
+
+                <p class="title">{{ deck.title }}</p>
+                <a class="details" href="{% url 'deck-detail' pk=deck.pk %}">View Deck</a>
+                <a class="delete" href="{% url 'delete-deck' pk=deck.pk %}">Delete Deck</a>
+                <a class="delete" href="{% url 'edit-deck' pk=deck.pk %}">Edit Deck</a>
+                
+                
+            </div>
+            {% endfor %}
+        </section>
+        <br>
+        <a href="http://djangopony.com/" class="ponybadge" title="Magic! Ponies! Django! Whee!"><img src="http://media.djangopony.com/img/small/badge.png" width="210" height="65" alt="pony powered"></a>
+</body>
+</html>
+
